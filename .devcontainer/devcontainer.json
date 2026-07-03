@@ -1,0 +1,34 @@
+{
+    "name": "UC Davis App: ${localWorkspaceFolderBasename}",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "Prisma.prisma",
+                "bradlc.vscode-tailwindcss"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": "always"
+                },
+                "editor.formatOnSave": true
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22"
+        }
+    },
+    "containerEnv": {
+        // becomes  POSTGRES_DB=myapp_db  inside the container
+        "POSTGRES_DB": "${localWorkspaceFolderBasename}_db",
+        "DATABASE_URL": "postgres://postgres:postgres@db:5432/${localWorkspaceFolderBasename}_db"
+    },
+    "postCreateCommand": "cd /workspace/web && npm install"
+}

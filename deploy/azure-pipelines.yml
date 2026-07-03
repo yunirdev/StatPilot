@@ -1,0 +1,77 @@
+# --------------------------- ABOUT --------------------------------------
+# this pipeline deploys code to an Azure webapp pointing to a pgsql db
+# `main` depoloys to the main app, while each PR deploys to an ephemeral "preview" url
+# the db for each preview uses a PR-specific schema so it is independent
+# NOTE: this requires our db to be open to azure services, so both pipelines & web can talk to the db
+# NOTE: we aren't seeding the db but eventually we might want to -- that would go right after `npx prisma migrate deploy`
+trigger:
+  branches:
+    include:
+      - main # prod deploys
+
+pr: # preview deploys
+  branches:
+    include:
+      - '*' # every PR against any branch
+
+#---------------------------- SHARED SECRETS ------------------------------
+variables:
+  - group: app-template-ci # most secrets should go here
+  - name: acrName
+    value: apptemplateacr # docker registry
+  - name: imageRepo
+    value: apptemplateweb # docker repo inside that registry
+  - name: dockerRegistryServiceConnection
+    value: CaesContainerTest # ACR service-connection name
+  - name: azureSubscription
+    value: CaesTestDeploy # ARM service-connection for CLI (deploy access to the webapp)
+  - name: resourceGroup
+    value: app-template # RG containing the Web App
+  - name: webAppName
+    value: app-template-web # webapp
+  - name: acrLoginServer
+    value: apptemplateacr.azurecr.io
+  - name: imageTag # full 40-char commit SHA
+    value: $(Build.SourceVersion)
+  - name: imageUri
+    value: $(acrLoginServer)/$(imageRepo):$(imageTag)
+  - name: isMain
+    value: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+
+stages:
+  # ─────────────────────────── BUILD & PUSH ────────────────────────────
+  - stage: Build
+    jobs:
+      - job: Build
+        pool: { vmImage: 'ubuntu-latest' }
+        steps:
+          # Build the image and push it to ACR
+          - task: Docker@2
+            displayName: Build & Push
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepo)
+              tags: |
+                $(imageTag)
+              Dockerfile: 'web/Dockerfile'
+              containerRegistry: $(dockerRegistryServiceConnection)
+
+  # ─────────────────────────── DEPLOY TAG ──────────────────────────────
+  # eventually we'll move this to a new step and have test/slot deployments
+  - stage: Deploy
+    dependsOn: Build
+    jobs:
+      - job: UpdateWebApp
+        pool: { vmImage: 'ubuntu-latest' }
+        steps:
+          - task: AzureCLI@2
+            displayName: Point Web App at new tag
+            inputs:
+              azureSubscription: $(azureSubscription)
+              scriptType: bash
+              scriptLocation: inlineScript
+              inlineScript: |
+                az webapp config container set \
+                  --name            $(webAppName) \
+                  --resource-group  $(resourceGroup) \
+                  --docker-custom-image-name $(imageUri)

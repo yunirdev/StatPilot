@@ -22,7 +22,7 @@
 
 | ID  | Title | Language | Description | Owner | Dependencies | Status      | Acceptance criteria |
 | --- | ----- | -------- | ----------- | ----- | ------------ | ----------- | ------------------- |
-| W1  |       | Either   |             |       |              | Not started |                     |
+| W1  |       | Python   |             |       |              | Not started |                     |
 
 ## 5. AI Execution Notes
 

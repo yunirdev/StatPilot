@@ -24,8 +24,20 @@ body:
     id: context
     attributes:
       label: Context and constraints
-      description: Include links, affected files, guardrails, and anything AI must not change.
-      placeholder: Existing routes, business rules, timelines, and scope boundaries.
+      description: Include links, affected files, language preference, guardrails, and anything AI must not change.
+      placeholder: Python/R preference, data constraints, timelines, scope boundaries, and protected files.
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Preferred language
+      description: Choose the primary language for this task.
+      options:
+        - Python
+        - R
+        - Either
+        - Mixed Python and R
     validations:
       required: true
   - type: textarea
@@ -43,7 +55,10 @@ body:
     id: validation
     attributes:
       label: Validation plan
-      description: State the commands, checks, or manual steps required before merge.
-      placeholder: npm run lint && npm run build
+      description: State the Python/R commands, checks, notebook reruns, or manual steps required before merge.
+      placeholder: |
+        python -m pytest
+        python script.py --help
+        Rscript analysis/run_report.R
     validations:
       required: true

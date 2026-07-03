@@ -1,6 +1,6 @@
 # StatPilot (based on the UC Davis CAES Next.js Starter)
 
-This repository now includes a lightweight collaboration + AI delivery scaffold on top of the existing Next.js starter so a team can start from an empty project, add a `plan.md`, and then let AI agents work from a shared structure.
+This repository now includes a lightweight collaboration + AI delivery scaffold on top of the existing starter so a team can start from an empty project, add a `plan.md`, and then let AI agents work from a shared structure.
 
 ## Recommended Project Bootstrap Workflow
 
@@ -9,6 +9,7 @@ This repository now includes a lightweight collaboration + AI delivery scaffold 
 3. Create executable work items with the GitHub issue template in `.github/ISSUE_TEMPLATE/ai-work-item.yml`.
 4. Use `docs/templates/task.template.md` when converting a plan item into a task for a teammate or AI agent.
 5. Use `.github/PULL_REQUEST_TEMPLATE.md` to keep reviews, validation, and handoffs consistent.
+6. Document the Python and/or R environment for the task up front (for example `requirements.txt`, `pyproject.toml`, `environment.yml`, or `renv.lock`).
 
 ## Collaboration Files Added For This Repository
 
@@ -26,6 +27,7 @@ This repository now includes a lightweight collaboration + AI delivery scaffold 
 - Always link a PR back to the plan item or issue it completes.
 - Record decisions and constraints before implementation so AI agents can follow them consistently.
 - Prefer updating the relevant template instead of sharing unstructured requirements in chat.
+- Default new analysis, automation, and modeling work to Python or R unless a task explicitly requires another stack.
 
 ## Original Next.js Starter Features
 

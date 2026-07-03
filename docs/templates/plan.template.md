@@ -20,13 +20,16 @@
 
 ## 4. Work Items
 
-| ID  | Title | Description | Owner | Dependencies | Status      | Acceptance criteria |
-| --- | ----- | ----------- | ----- | ------------ | ----------- | ------------------- |
-| W1  |       |             |       |              | Not started |                     |
+| ID  | Title | Language | Description | Owner | Dependencies | Status      | Acceptance criteria |
+| --- | ----- | -------- | ----------- | ----- | ------------ | ----------- | ------------------- |
+| W1  |       | Python/R |             |       |              | Not started |                     |
 
 ## 5. AI Execution Notes
 
 - **Read first**:
+- **Preferred language**: Python / R / either
+- **Environment files**:
+- **Data inputs / outputs**:
 - **Do not change**:
 - **Files / systems likely involved**:
 - **Validation required**:

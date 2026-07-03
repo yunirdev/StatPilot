@@ -9,9 +9,9 @@
 
 ## Validation
 
-- [ ] `npm run lint`
-- [ ] `npm run build`
-- [ ] Manual verification completed
+- [ ] Relevant Python checks were run and documented, or marked N/A
+- [ ] Relevant R checks were run and documented, or marked N/A
+- [ ] Manual verification or notebook rerun completed
 
 ## Handoff notes
 

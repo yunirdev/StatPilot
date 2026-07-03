@@ -4,6 +4,7 @@
 
 - **Task ID / issue**:
 - **Related plan item**:
+- **Preferred language**: Python / R / either
 - **Owner**:
 - **Priority**:
 
@@ -11,6 +12,8 @@
 
 - **Why this task exists**:
 - **Relevant files / links**:
+- **Environment / dependency files**:
+- **Data inputs / outputs**:
 - **Dependencies**:
 
 ## Requirements
@@ -23,7 +26,8 @@
 
 ## Validation
 
-- **Required checks**:
+- **Required Python checks**:
+- **Required R checks**:
 - **Manual verification**:
 
 ## Handoff Notes

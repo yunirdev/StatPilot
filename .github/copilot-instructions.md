@@ -6,38 +6,31 @@
 - Check the project brief or task template in `docs/templates/` when requirements or constraints are unclear.
 - Keep changes mapped to a single plan item or GitHub issue whenever possible.
 - When finishing work, update status, validation notes, and follow-up items in the related issue or pull request.
-- Use Next.js (React, TypeScript) conventions for all code.
-- Place new pages in the correct subfolder of `src/app/` (`(public)`, `(protected)`, or `api`).
-- Use `.tsx` for React components and prefer functional components.
-- Use Tailwind CSS w/ DaisyUI for all styling.
-- For database access, use Prisma ORM with the schema in `prisma/schema.prisma`.
-- For authentication, use AuthJS (Next-Auth) and follow the config in `src/server/auth/config.ts`.
-- For APIs, use tRPC and add new procedures to `src/server/api/router.ts` and related files.
-- Use TypeScript for all new code.
-- Follow the established folder structure and naming conventions.
-- Use ESLint and Prettier for code style and formatting.
-- Add comments to explain complex logic.
-- Prefer server components unless client interactivity is required.
-- For protected routes, use `protectedProcedure` in tRPC or place pages in `(protected)`.
-- Use environment variables from `.env` or `.env.local` for secrets and DB connection strings.
+- Default new project work to Python and R.
+- Use Python for data processing, automation, pipelines, and integrations unless the plan says otherwise.
+- Use R for statistics, modeling, visualization, and reporting when it is the better fit.
+- When adding dependencies, update the project environment files in the relevant language (`requirements.txt`, `pyproject.toml`, `environment.yml`, `renv.lock`, or similar).
+- Keep notebooks and scripts reproducible: document required inputs, outputs, and execution steps in the related task or plan item.
+- Follow the established folder structure and naming conventions for the files already in the repository.
+- Use existing formatting and linting tools where available.
+- Add comments only when needed to explain non-obvious logic.
+- Use environment files for secrets and configuration values rather than hardcoding them.
+- If a task explicitly targets the existing Next.js starter in `web/`, follow the conventions already used in that application.
 
 ## What language style and formatting should Copilot use?
 
-- TypeScript for all code.
-- Functional React components.
-- Tailwind CSS for styling.
-- Consistent with ESLint and Prettier settings in this repo.
+- Prefer Python and R for new project work.
 - Use clear, concise variable and function names.
-- Add JSDoc comments for exported functions and components.
+- Follow the formatter/linter that matches the files being edited.
+- Add docstrings or inline comments when they help explain non-obvious behavior.
 
 ## Example prompts for this repository
 
 - Read `plan.md` and implement the next unchecked task with tests.
 - Turn a plan item into a scoped GitHub issue using the task template.
-- Add a new protected page for user profile.
-- Create a tRPC procedure to fetch all users.
-- Add a new Prisma model for 'Event' with fields name, date, and location.
-- Show an example of using AuthJS session in a React component.
+- Add a Python data-cleaning script for the next plan item.
+- Create an R analysis script that produces a summary table and chart.
+- Turn a notebook workflow into a reproducible Python or R task with validation steps.
 
 ---
 

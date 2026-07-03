@@ -21,7 +21,10 @@
 
 - **Timeline**:
 - **Budget / staffing**:
+- **Primary language(s)**: Python / R / both
+- **Environment management**: `requirements.txt`, `pyproject.toml`, `environment.yml`, `renv.lock`, or other
 - **Technical constraints**:
+- **Data sources / access limits**:
 - **Compliance / security requirements**:
 
 ## 4. Delivery Setup
@@ -30,11 +33,14 @@
 - **Primary reviewer(s)**:
 - **AI usage policy**:
 - **Definition of done**:
+- **Expected deliverables**: scripts / notebooks / reports / dashboards / data outputs
 
 ## 5. Working Agreements
 
 - Branch / PR naming:
 - Required checks:
+- Preferred validation commands for Python:
+- Preferred validation commands for R:
 - Review SLA:
 - Communication channel:
 

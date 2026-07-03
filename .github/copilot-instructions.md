@@ -2,6 +2,10 @@
 
 ## How should GitHub Copilot behave in this repository?
 
+- Read `plan.md` first when it exists, and treat it as the current source of truth for scope, priorities, and acceptance criteria.
+- Check the project brief or task template in `docs/templates/` when requirements or constraints are unclear.
+- Keep changes mapped to a single plan item or GitHub issue whenever possible.
+- When finishing work, update status, validation notes, and follow-up items in the related issue or pull request.
 - Use Next.js (React, TypeScript) conventions for all code.
 - Place new pages in the correct subfolder of `src/app/` (`(public)`, `(protected)`, or `api`).
 - Use `.tsx` for React components and prefer functional components.
@@ -28,6 +32,8 @@
 
 ## Example prompts for this repository
 
+- Read `plan.md` and implement the next unchecked task with tests.
+- Turn a plan item into a scoped GitHub issue using the task template.
 - Add a new protected page for user profile.
 - Create a tRPC procedure to fetch all users.
 - Add a new Prisma model for 'Event' with fields name, date, and location.

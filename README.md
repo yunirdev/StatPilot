@@ -1,4 +1,4 @@
-# StatPilot
+# StatPilot (based on the UC Davis CAES Next.js Starter)
 
 This repository now includes a lightweight collaboration + AI delivery scaffold on top of the existing Next.js starter so a team can start from an empty project, add a `plan.md`, and then let AI agents work from a shared structure.
 
@@ -27,7 +27,7 @@ This repository now includes a lightweight collaboration + AI delivery scaffold 
 - Record decisions and constraints before implementation so AI agents can follow them consistently.
 - Prefer updating the relevant template instead of sharing unstructured requirements in chat.
 
-## Existing Web Starter
+## Original Next.js Starter Features
 
 This repository still includes the original web starter for building Next.js applications.
 

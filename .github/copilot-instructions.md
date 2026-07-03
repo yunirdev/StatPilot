@@ -6,7 +6,7 @@
 - Check the project brief or task template in `docs/templates/` when requirements or constraints are unclear.
 - Keep changes mapped to a single plan item or GitHub issue whenever possible.
 - When finishing work, update status, validation notes, and follow-up items in the related issue or pull request.
-- Default new project work to Python and R.
+- Default new project work to Python or R based on the task requirements.
 - Use Python for data processing, automation, pipelines, and integrations unless the plan says otherwise.
 - Use R for statistics, modeling, visualization, and reporting when it is the better fit.
 - When adding dependencies, update the project environment files in the relevant language (`requirements.txt`, `pyproject.toml`, `environment.yml`, `renv.lock`, or similar).

@@ -27,7 +27,7 @@
 ## 5. AI Execution Notes
 
 - **Read first**:
-- **Preferred language**: Python / R / either
+- **Preferred language**: Python / R / Either
 - **Environment files**:
 - **Data inputs / outputs**:
 - **Do not change**:

@@ -4,7 +4,7 @@
 
 - **Task ID / issue**:
 - **Related plan item**:
-- **Preferred language**: Python / R / either
+- **Preferred language**: Python / R / Either
 - **Owner**:
 - **Priority**:
 

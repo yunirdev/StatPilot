@@ -21,7 +21,7 @@
 
 - **Timeline**:
 - **Budget / staffing**:
-- **Primary language(s)**: Python / R / both
+- **Primary language(s)**: Python / R / Both
 - **Environment management**: `requirements.txt`, `pyproject.toml`, `environment.yml`, `renv.lock`, or other
 - **Technical constraints**:
 - **Data sources / access limits**:

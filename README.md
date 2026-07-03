@@ -1,6 +1,37 @@
-# UC Davis CAES Next.js Starter
+# StatPilot (based on the UC Davis CAES Next.js Starter)
 
-This is a starter template for building web applications using Next.js, created by CA&ES.
+This repository now includes a lightweight collaboration + AI delivery scaffold on top of the existing starter so a team can start from an empty project, add a `plan.md`, and then let AI agents work from a shared structure.
+
+## Recommended Project Bootstrap Workflow
+
+1. Define the project context with `docs/templates/project-brief.template.md`.
+2. Copy `docs/templates/plan.template.md` to `plan.md` and fill in milestones, work items, and acceptance criteria.
+3. Create executable work items with the GitHub issue template in `.github/ISSUE_TEMPLATE/ai-work-item.yml`.
+4. Use `docs/templates/task.template.md` when converting a plan item into a task for a teammate or AI agent.
+5. Use `.github/PULL_REQUEST_TEMPLATE.md` to keep reviews, validation, and handoffs consistent.
+6. Document the Python and/or R environment for the task up front (for example `requirements.txt`, `pyproject.toml`, `environment.yml`, or `renv.lock`).
+
+## Collaboration Files Added For This Repository
+
+- `docs/templates/project-brief.template.md`: project background, goals, constraints, owners, and decisions.
+- `docs/templates/plan.template.md`: the shared implementation plan template intended to become `plan.md`.
+- `docs/templates/task.template.md`: a focused delivery template for a single issue / AI execution unit.
+- `.github/ISSUE_TEMPLATE/ai-work-item.yml`: structured work intake for humans and AI.
+- `.github/PULL_REQUEST_TEMPLATE.md`: consistent implementation and validation checklist.
+- `.github/copilot-instructions.md`: updated repository-specific AI workflow guidance.
+
+## AI Working Agreement
+
+- Keep `plan.md` as the source of truth for scope, status, and acceptance criteria.
+- Break work into small GitHub issues that each map to one plan item.
+- Always link a PR back to the plan item or issue it completes.
+- Record decisions and constraints before implementation so AI agents can follow them consistently.
+- Prefer updating the relevant template instead of sharing unstructured requirements in chat.
+- Default new analysis, automation, and modeling work to Python or R unless a task explicitly requires another stack.
+
+## Original Next.js Starter Features
+
+This repository still includes the original web starter for building Next.js applications.
 
 ## Features
 

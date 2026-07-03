@@ -1,0 +1,64 @@
+name: AI work item
+description: Create a scoped issue that a teammate or AI agent can execute from the shared plan.
+title: '[Task] '
+labels:
+  - task
+body:
+  - type: input
+    id: plan_item
+    attributes:
+      label: Related plan item
+      description: Reference the work item ID from plan.md.
+      placeholder: W1
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the outcome that should be delivered.
+      placeholder: Implement the first deliverable from the plan.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and constraints
+      description: Include links, affected files, language preference, guardrails, and anything AI must not change.
+      placeholder: Python/R preference, data constraints, timelines, scope boundaries, and protected files.
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Preferred language
+      description: Choose the primary language for this task.
+      options:
+        - Python
+        - R
+        - Either
+        - Mixed Python and R
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List testable completion conditions.
+      placeholder: |
+        - [ ] Feature works end to end
+        - [ ] Existing behavior is preserved
+        - [ ] Validation steps are documented
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation plan
+      description: State the Python/R commands, checks, notebook reruns, or manual steps required before merge.
+      placeholder: |
+        python -m pytest
+        python script.py --help
+        Rscript analysis/run_report.R
+    validations:
+      required: true

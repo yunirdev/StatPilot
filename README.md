@@ -1,4 +1,4 @@
-# StatPilot Collaboration Starter
+# StatPilot
 
 This repository now includes a lightweight collaboration + AI delivery scaffold on top of the existing Next.js starter so a team can start from an empty project, add a `plan.md`, and then let AI agents work from a shared structure.
 

@@ -1,8 +1,1 @@
 blank_issues_enabled: false
-contact_links:
-  - name: Project brief template
-    url: https://github.com/yunirdev/StatPilot/blob/main/docs/templates/project-brief.template.md
-    about: Start here before creating execution issues for a new project.
-  - name: Plan template
-    url: https://github.com/yunirdev/StatPilot/blob/main/docs/templates/plan.template.md
-    about: Copy this template into plan.md and keep it updated as the source of truth.
